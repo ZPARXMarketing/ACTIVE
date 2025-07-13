@@ -14,9 +14,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                <Zap className="text-white text-lg" />
-              </div>
+              <img 
+                src="/assets/zparx-logo.png" 
+                alt="ZparX Marketing Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="text-xl font-bold">ZparX Marketing</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
