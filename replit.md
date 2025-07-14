@@ -4,6 +4,14 @@
 
 This is a full-stack web application for ZparX Marketing, a social media marketing agency. The application features a modern, responsive landing page with contact form functionality, built using React with TypeScript for the frontend and Express with PostgreSQL for the backend.
 
+## Recent Changes
+
+- **July 14, 2025**: Updated Twitter bird icon to modern X logo in hero section while preserving bounce animation
+- **July 14, 2025**: Changed presentation route from `/presentation` to `/presentation_A` per user request
+- **July 14, 2025**: Configured ZparX logo favicon for entire website (all pages)
+- **July 14, 2025**: Implemented interactive PDF slideshow presentation optimized for iPad viewing
+- **July 14, 2025**: Set up Nodemailer email system for contact form submissions to Zparxmarketing@gmail.com
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
