@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src="/assets/zparx-logo.png" 
+                src="/assets/zparx-logo-clean.png" 
                 alt="ZparX Marketing Logo" 
                 className="w-10 h-10 object-contain"
               />
