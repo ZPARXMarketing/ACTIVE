@@ -225,21 +225,8 @@ export default function Presentation() {
         {/* Slide Content */}
         <div className="flex-1 flex items-center justify-center p-8">
           <div className="w-full max-w-6xl mx-auto">
-            <div className="bg-white rounded-xl shadow-2xl p-12 min-h-[600px] flex items-center justify-center relative overflow-hidden">
-              {/* Background Logo Watermark */}
-              <div 
-                className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none"
-                style={{
-                  backgroundImage: "url('/assets/zparx-logo-clean.png')",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  backgroundSize: "300px auto"
-                }}
-              />
-              {/* Slide Content */}
-              <div className="relative z-10 w-full">
-                {slides[currentSlide].content}
-              </div>
+            <div className="bg-white rounded-xl shadow-2xl p-12 min-h-[600px] flex items-center justify-center">
+              {slides[currentSlide].content}
             </div>
           </div>
         </div>
