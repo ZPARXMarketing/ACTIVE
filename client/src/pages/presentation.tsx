@@ -301,7 +301,7 @@ export default function Presentation() {
             </Link>
             <Link 
               href="/" 
-              className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors"
+              className="flex items-center space-x-2 text-gray-600 hover:text-gray-800 transition-colors px-8 py-3 rounded-lg hover:bg-gray-100"
             >
               <Home className="w-4 h-4" />
               <span>Return to Website</span>
