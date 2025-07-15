@@ -115,7 +115,14 @@ export default function SocialMediaOffer() {
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-purple-600">ZparX Marketing</div>
+          <a href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+            <img 
+              src="/assets/zparx-logo-clean.png" 
+              alt="ZparX Marketing Logo" 
+              className="w-10 h-10 object-contain"
+            />
+            <div className="text-2xl font-bold text-purple-600">ZparX Marketing</div>
+          </a>
           <Badge variant="secondary" className="bg-purple-100 text-purple-700">
             Social Media Management
           </Badge>
