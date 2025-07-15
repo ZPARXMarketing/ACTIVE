@@ -6,6 +6,7 @@ This is a full-stack web application for ZparX Marketing, a social media marketi
 
 ## Recent Changes
 
+- **July 15, 2025**: Implemented email tracking for offer page interactions (page visits, plan selections, Calendly opens)
 - **July 15, 2025**: Added ZparX logo and clickable navigation back to main site on both offer pages
 - **July 15, 2025**: Created social media management offer page at `/social-media` with three pricing tiers (Starter $497, Growth $797, Premium $1,197)
 - **July 15, 2025**: Implemented tiered pricing structure for social media services with detailed feature comparisons

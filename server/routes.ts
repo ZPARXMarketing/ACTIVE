@@ -67,6 +67,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Track offer page interactions
+  app.post("/api/track-offer", async (req, res) => {
+    try {
+      const { offerType, planName, price, action } = req.body;
+      
+      // Send email notification to track which offers are getting engagement
+      const mailOptions = {
+        from: process.env.EMAIL_USER || 'your-email@gmail.com',
+        to: 'Zparxmarketing@gmail.com',
+        subject: `🎯 Offer Page Activity - ${offerType}`,
+        html: `
+          <h2>New Offer Page Activity</h2>
+          <p><strong>Offer Type:</strong> ${offerType}</p>
+          <p><strong>Action:</strong> ${action}</p>
+          ${planName ? `<p><strong>Plan Selected:</strong> ${planName}</p>` : ''}
+          ${price ? `<p><strong>Price:</strong> ${price}</p>` : ''}
+          <p><strong>Timestamp:</strong> ${new Date().toLocaleString()}</p>
+          <hr>
+          <p><small>This prospect showed interest in your ${offerType} service</small></p>
+        `
+      };
+
+      await transporter.sendMail(mailOptions);
+      
+      res.json({ message: "Offer interaction tracked successfully" });
+    } catch (error) {
+      console.error("Error tracking offer interaction:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   // Consultation booking endpoint
   app.post("/api/book-consultation", async (req, res) => {
     try {

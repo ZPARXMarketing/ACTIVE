@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -30,6 +30,21 @@ export default function Funnel() {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
+
+  // Track page visit
+  useEffect(() => {
+    const trackVisit = async () => {
+      try {
+        await apiRequest("POST", "/api/track-offer", {
+          offerType: "Lead Generation",
+          action: "Page Visited"
+        });
+      } catch (error) {
+        console.log("Analytics tracking failed:", error);
+      }
+    };
+    trackVisit();
+  }, []);
 
   const form = useForm<BookingFormData>({
     resolver: zodResolver(bookingFormSchema),
@@ -232,15 +247,23 @@ export default function Funnel() {
               <p className="text-lg text-gray-600">
                 Book a free consultation to discuss your lead generation needs
               </p>
-              <a
-                href="https://calendly.com/zparx/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                onClick={async () => {
+                  try {
+                    await apiRequest("POST", "/api/track-offer", {
+                      offerType: "Lead Generation",
+                      action: "Free Consultation - Calendly Opened"
+                    });
+                  } catch (error) {
+                    console.log("Analytics tracking failed:", error);
+                  }
+                  window.open("https://calendly.com/zparx/30min", "_blank");
+                }}
                 className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-lg font-semibold transition-colors"
               >
                 Book Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
+              </Button>
               <p className="text-sm text-gray-500">
                 No commitment required • 30-minute consultation • Get your lead generation strategy
               </p>

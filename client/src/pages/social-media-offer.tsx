@@ -1,11 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Check, ArrowRight, Star, Calendar, TrendingUp, Users, MessageCircle, Camera, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function SocialMediaOffer() {
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  // Track page visit
+  useEffect(() => {
+    const trackVisit = async () => {
+      try {
+        await apiRequest("POST", "/api/track-offer", {
+          offerType: "Social Media Management",
+          action: "Page Visited"
+        });
+      } catch (error) {
+        console.log("Analytics tracking failed:", error);
+      }
+    };
+    trackVisit();
+  }, []);
 
   const plans = [
     {
@@ -103,8 +119,21 @@ export default function SocialMediaOffer() {
     }
   ];
 
-  const handleSelectPlan = (planId: string, planName: string, price: string) => {
+  const handleSelectPlan = async (planId: string, planName: string, price: string) => {
     setSelectedPlan(planId);
+    
+    // Track this interaction for analytics
+    try {
+      await apiRequest("POST", "/api/track-offer", {
+        offerType: "Social Media Management",
+        planName: planName,
+        price: price,
+        action: "Plan Selected - Calendly Opened"
+      });
+    } catch (error) {
+      console.log("Analytics tracking failed:", error);
+    }
+    
     // Open Calendly with pre-filled information
     const calendlyUrl = `https://calendly.com/zparx/30min?text1=${encodeURIComponent(`Interested in ${planName} plan (${price}/month) for social media management`)}&name=Social Media Consultation`;
     window.open(calendlyUrl, '_blank');
@@ -294,15 +323,23 @@ export default function SocialMediaOffer() {
           <p className="text-lg text-gray-600 mb-8">
             Book a free strategy call to discuss which plan is right for your business
           </p>
-          <a
-            href="https://calendly.com/zparx/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            onClick={async () => {
+              try {
+                await apiRequest("POST", "/api/track-offer", {
+                  offerType: "Social Media Management",
+                  action: "Free Strategy Call - Calendly Opened"
+                });
+              } catch (error) {
+                console.log("Analytics tracking failed:", error);
+              }
+              window.open("https://calendly.com/zparx/30min", "_blank");
+            }}
             className="inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg rounded-lg font-semibold transition-colors"
           >
             Book Free Strategy Call
             <ArrowRight className="w-5 h-5 ml-2" />
-          </a>
+          </Button>
           <p className="text-sm text-gray-500 mt-4">
             No commitment required • 30-minute consultation • Get your social media strategy
           </p>
