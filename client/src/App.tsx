@@ -15,7 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/presentation_A" component={Presentation} />
       <Route path="/lead-gen-offer" component={Funnel} />
-      <Route path="/social-media-offer" component={SocialMediaOffer} />
+      <Route path="/social-media" component={SocialMediaOffer} />
       <Route component={NotFound} />
     </Switch>
   );
