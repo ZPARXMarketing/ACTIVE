@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContactSchema } from "@shared/schema";
+import { insertContactSchema, insertConsultationSchema } from "@shared/schema";
 import { z } from "zod";
 import nodemailer from "nodemailer";
 
@@ -63,6 +63,60 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(contacts);
     } catch (error) {
       console.error("Error fetching contacts:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
+  // Consultation booking endpoint
+  app.post("/api/book-consultation", async (req, res) => {
+    try {
+      // Validate request body
+      const validatedData = insertConsultationSchema.parse(req.body);
+      
+      // Store consultation booking
+      const booking = await storage.createConsultationBooking(validatedData);
+      
+      // Send email notification for consultation booking
+      const mailOptions = {
+        from: process.env.EMAIL_USER || 'your-email@gmail.com',
+        to: 'Zparxmarketing@gmail.com',
+        subject: `New Consultation Booking - ${validatedData.firstName} ${validatedData.lastName}`,
+        html: `
+          <h2>New Consultation Booking for Lead Generation Service</h2>
+          <p><strong>Name:</strong> ${validatedData.firstName} ${validatedData.lastName}</p>
+          <p><strong>Email:</strong> ${validatedData.email}</p>
+          <p><strong>Phone:</strong> ${validatedData.phone}</p>
+          <p><strong>Company:</strong> ${validatedData.company}</p>
+          <p><strong>Industry:</strong> ${validatedData.industry}</p>
+          <p><strong>Current Lead Volume:</strong> ${validatedData.currentLeads}</p>
+          <p><strong>Preferred Meeting Time:</strong> ${validatedData.preferredTime}</p>
+          <hr>
+          <p><strong>Service:</strong> Lead Generation with Calendar Filling</p>
+          <p><strong>Guarantee:</strong> 10+ leads per month or money back</p>
+          <p><small>Booked on: ${new Date().toLocaleString()}</small></p>
+        `
+      };
+
+      await transporter.sendMail(mailOptions);
+      
+      res.json({ message: "Consultation booked successfully", id: booking.id });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Validation error", errors: error.errors });
+      } else {
+        console.error("Error processing consultation booking:", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  });
+
+  // Get consultation bookings endpoint (for admin purposes)
+  app.get("/api/consultations", async (req, res) => {
+    try {
+      const bookings = await storage.getConsultationBookings();
+      res.json(bookings);
+    } catch (error) {
+      console.error("Error fetching consultation bookings:", error);
       res.status(500).json({ message: "Internal server error" });
     }
   });

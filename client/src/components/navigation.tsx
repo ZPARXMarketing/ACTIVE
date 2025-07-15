@@ -39,6 +39,9 @@ export default function Navigation() {
             <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors">
               Process
             </button>
+            <a href="/funnel" className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-semibold">
+              Lead Generation
+            </a>
             <button 
               onClick={() => scrollToSection("contact")} 
               className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors"
@@ -72,6 +75,9 @@ export default function Navigation() {
               <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-left">
                 Process
               </button>
+              <a href="/funnel" className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors text-center font-semibold">
+                Lead Generation
+              </a>
               <button 
                 onClick={() => scrollToSection("contact")} 
                 className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors text-center"
