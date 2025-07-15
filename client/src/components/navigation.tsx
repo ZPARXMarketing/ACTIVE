@@ -26,7 +26,7 @@ export default function Navigation() {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
             <button onClick={() => scrollToSection("home")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
               Home
             </button>
@@ -39,9 +39,6 @@ export default function Navigation() {
             <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
               Process
             </button>
-            <a href="/lead-gen-offer" className="bg-green-600 text-white px-4 xl:px-6 py-2 rounded-full hover:bg-green-700 transition-colors font-semibold text-sm xl:text-base whitespace-nowrap">
-              Lead Gen
-            </a>
             <button 
               onClick={() => scrollToSection("contact")} 
               className="bg-primary text-white px-4 xl:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors text-sm xl:text-base whitespace-nowrap"
@@ -52,7 +49,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <button 
-            className="lg:hidden text-gray-700 flex-shrink-0 p-1"
+            className="md:hidden text-gray-700 flex-shrink-0 p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -61,7 +58,7 @@ export default function Navigation() {
         
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
             <div className="flex flex-col space-y-3 mt-4">
               <button onClick={() => scrollToSection("home")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
                 Home
@@ -75,10 +72,7 @@ export default function Navigation() {
               <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
                 Process
               </button>
-              <div className="pt-2 space-y-3">
-                <a href="/lead-gen-offer" className="block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors text-center font-semibold">
-                  Lead Generation
-                </a>
+              <div className="pt-2">
                 <button 
                   onClick={() => scrollToSection("contact")} 
                   className="w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors text-center"

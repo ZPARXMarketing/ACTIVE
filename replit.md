@@ -12,7 +12,7 @@ This is a full-stack web application for ZparX Marketing, a social media marketi
 - **July 15, 2025**: Implemented tiered pricing structure for social media services with detailed feature comparisons
 - **July 15, 2025**: Created lead generation marketing funnel at `/lead-gen-offer` with Calendly integration for 10-leads guarantee service
 - **July 15, 2025**: Integrated Calendly scheduling (https://calendly.com/zparx/30min) for direct consultation bookings
-- **July 15, 2025**: Added "Lead Generation" navigation button to drive traffic to offer page
+- **July 15, 2025**: Removed "Lead Generation" navigation button to make it a private funnel accessible only via direct URL
 - **July 14, 2025**: Updated Twitter bird icon to modern X logo in hero section while preserving bounce animation
 - **July 14, 2025**: Changed presentation route from `/presentation` to `/presentation_A` per user request
 - **July 14, 2025**: Configured ZparX logo favicon for entire website (all pages)
