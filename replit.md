@@ -6,6 +6,8 @@ This is a full-stack web application for ZparX Marketing, a social media marketi
 
 ## Recent Changes
 
+- **July 15, 2025**: Created social media management offer page at `/social-media-offer` with three pricing tiers (Starter $497, Growth $797, Premium $1,197)
+- **July 15, 2025**: Implemented tiered pricing structure for social media services with detailed feature comparisons
 - **July 15, 2025**: Created lead generation marketing funnel at `/lead-gen-offer` with Calendly integration for 10-leads guarantee service
 - **July 15, 2025**: Integrated Calendly scheduling (https://calendly.com/zparx/30min) for direct consultation bookings
 - **July 15, 2025**: Added "Lead Generation" navigation button to drive traffic to offer page
