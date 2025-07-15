@@ -225,14 +225,15 @@ export default function Funnel() {
               <p className="text-lg text-gray-600">
                 Book a free consultation to discuss your lead generation needs
               </p>
-              <Button 
-                size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
-                onClick={() => setStep(2)}
+              <a
+                href="https://calendly.com/zparx/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-lg font-semibold transition-colors"
               >
                 Book Free Consultation
                 <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              </a>
               <p className="text-sm text-gray-500">
                 No commitment required • 30-minute consultation • Get your lead generation strategy
               </p>
@@ -241,187 +242,52 @@ export default function Funnel() {
         )}
 
         {step === 2 && (
-          <div className="max-w-2xl mx-auto">
-            <Card>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Book Your Free Consultation</CardTitle>
-                <CardDescription>
-                  Tell us about your business and we'll show you how to get 10+ qualified leads per month
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>First Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="John" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Last Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Smith" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                Book Your Free Consultation
+              </h2>
+              <p className="text-lg text-gray-600">
+                Schedule a 30-minute call to discuss how we can get you 10+ qualified leads per month
+              </p>
+            </div>
+            
+            {/* Calendly Embed */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="h-[700px] w-full">
+                <iframe
+                  src="https://calendly.com/zparx/30min?embed_domain=zparxmarketing.com&embed_type=Inline"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  title="Schedule a consultation with ZparX Marketing"
+                  className="border-0"
+                />
+              </div>
+            </div>
 
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Email Address *</FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="john@company.com" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone Number *</FormLabel>
-                          <FormControl>
-                            <Input type="tel" placeholder="(555) 123-4567" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="company"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Company Name *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Your Company Inc." {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="industry"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Industry *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select your industry" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="construction">Construction & Trades</SelectItem>
-                              <SelectItem value="healthcare">Healthcare</SelectItem>
-                              <SelectItem value="legal">Legal Services</SelectItem>
-                              <SelectItem value="real-estate">Real Estate</SelectItem>
-                              <SelectItem value="automotive">Automotive</SelectItem>
-                              <SelectItem value="home-services">Home Services</SelectItem>
-                              <SelectItem value="professional">Professional Services</SelectItem>
-                              <SelectItem value="retail">Retail</SelectItem>
-                              <SelectItem value="technology">Technology</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="currentLeads"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Current Monthly Lead Volume *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select current lead volume" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="0-5">0-5 leads per month</SelectItem>
-                              <SelectItem value="6-15">6-15 leads per month</SelectItem>
-                              <SelectItem value="16-30">16-30 leads per month</SelectItem>
-                              <SelectItem value="30+">30+ leads per month</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="preferredTime"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Preferred Meeting Time *</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
-                            <FormControl>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select preferred time" />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="morning">Morning (9 AM - 12 PM)</SelectItem>
-                              <SelectItem value="afternoon">Afternoon (12 PM - 5 PM)</SelectItem>
-                              <SelectItem value="evening">Evening (5 PM - 8 PM)</SelectItem>
-                              <SelectItem value="flexible">I'm flexible</SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="pt-4">
-                      <Button 
-                        type="submit" 
-                        className="w-full bg-blue-600 hover:bg-blue-700"
-                        disabled={bookingMutation.isPending}
-                      >
-                        {bookingMutation.isPending ? "Booking..." : "Book My Free Consultation"}
-                      </Button>
-                    </div>
-
-                    <p className="text-sm text-gray-500 text-center">
-                      By submitting this form, you agree to be contacted about our lead generation services. 
-                      No spam, just valuable insights about growing your business.
-                    </p>
-                  </form>
-                </Form>
-              </CardContent>
-            </Card>
-
-            <div className="text-center mt-6">
-              <Button variant="ghost" onClick={() => setStep(1)}>
+            <div className="text-center mt-8 space-y-4">
+              <div className="grid md:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <div className="text-center">
+                  <div className="bg-green-100 p-3 rounded-full w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                    <CheckCircle className="w-6 h-6 text-green-600" />
+                  </div>
+                  <p className="text-sm text-gray-600">Free 30-min consultation</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-blue-100 p-3 rounded-full w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                    <Target className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <p className="text-sm text-gray-600">10+ leads guaranteed</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-purple-100 p-3 rounded-full w-12 h-12 mx-auto mb-2 flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <p className="text-sm text-gray-600">Money-back guarantee</p>
+                </div>
+              </div>
+              <Button variant="ghost" onClick={() => setStep(1)} className="mt-4">
                 ← Back to Information
               </Button>
             </div>
