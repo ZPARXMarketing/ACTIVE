@@ -13,7 +13,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/presentation_A" component={Presentation} />
-      <Route path="/offer" component={Funnel} />
+      <Route path="/lead-gen-offer" component={Funnel} />
       <Route component={NotFound} />
     </Switch>
   );
