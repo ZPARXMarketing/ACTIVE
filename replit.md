@@ -2,17 +2,16 @@
 
 ## Overview
 
-This is a full-stack web application for ZparX Marketing, a Huntsville, Alabama-based lead generation agency. The application features a clean, focused landing page specializing in generating quote-ready leads for local businesses through strategic social media advertising.
+This is a full-stack web application for ZparX Marketing, a social media marketing agency. The application features a modern, responsive landing page with contact form functionality, built using React with TypeScript for the frontend and Express with PostgreSQL for the backend.
 
 ## Recent Changes
 
-- **July 15, 2025**: Completely redesigned website to focus on lead generation for local businesses
-- **July 15, 2025**: Simplified site structure: Hero → About (Who Are We) → Contact form
-- **July 15, 2025**: Updated hero section with "We Generate Quote-Ready Leads for Your Local Business" 
-- **July 15, 2025**: Created "Who Are We" section highlighting Huntsville, Alabama location and 3-step process
-- **July 15, 2025**: Redesigned contact form to match RenoReach style with simplified fields (Full Name, Website, Email, Phone)
-- **July 15, 2025**: Restored original color scheme (purple, gold, red) after removing orange branding and "Get 10 New Quote-Ready Leads Within 30 Days, or You Don't Pay" guarantee
-- **July 15, 2025**: Removed unnecessary sections (Services, Benefits, Process, Testimonials) for cleaner focus
+- **July 15, 2025**: Implemented email tracking for offer page interactions (page visits, plan selections, Calendly opens)
+- **July 15, 2025**: Added ZparX logo and clickable navigation back to main site on both offer pages
+- **July 15, 2025**: Created social media management offer page at `/social-media` with three pricing tiers (Starter $497, Growth $797, Premium $1,197)
+- **July 15, 2025**: Implemented tiered pricing structure for social media services with detailed feature comparisons
+- **July 15, 2025**: Created lead generation marketing funnel at `/lead-gen-offer` with Calendly integration for 10-leads guarantee service
+- **July 15, 2025**: Integrated Calendly scheduling (https://calendly.com/zparx/30min) for direct consultation bookings
 - **July 15, 2025**: Removed "Lead Generation" navigation button to make it a private funnel accessible only via direct URL
 - **July 14, 2025**: Updated Twitter bird icon to modern X logo in hero section while preserving bounce animation
 - **July 14, 2025**: Changed presentation route from `/presentation` to `/presentation_A` per user request

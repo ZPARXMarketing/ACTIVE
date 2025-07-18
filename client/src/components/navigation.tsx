@@ -30,11 +30,15 @@ export default function Navigation() {
             <button onClick={() => scrollToSection("home")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
               Home
             </button>
-
+            <button onClick={() => scrollToSection("services")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
+              Services
+            </button>
             <button onClick={() => scrollToSection("about")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
               About
             </button>
-
+            <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
+              Process
+            </button>
             <button 
               onClick={() => scrollToSection("contact")} 
               className="bg-primary text-white px-4 xl:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors text-sm xl:text-base whitespace-nowrap"
@@ -59,11 +63,15 @@ export default function Navigation() {
               <button onClick={() => scrollToSection("home")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
                 Home
               </button>
-
+              <button onClick={() => scrollToSection("services")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
+                Services
+              </button>
               <button onClick={() => scrollToSection("about")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
                 About
               </button>
-
+              <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
+                Process
+              </button>
               <div className="pt-2">
                 <button 
                   onClick={() => scrollToSection("contact")} 
