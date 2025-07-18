@@ -70,7 +70,7 @@ export default function Contact() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Get 10 New Quote-Ready Leads
           </h2>
-          <p className="text-xl text-orange-400 max-w-3xl mx-auto font-semibold">
+          <p className="text-xl text-secondary max-w-3xl mx-auto font-semibold">
             Within 30 Days, or You Don't Pay
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function Contact() {
                     
                     <Button 
                       type="submit" 
-                      className="w-full py-4 text-lg bg-orange-500 hover:bg-orange-600"
+                      className="w-full py-4 text-lg bg-primary hover:bg-primary/90"
                       disabled={contactMutation.isPending}
                     >
                       {contactMutation.isPending ? (

@@ -28,7 +28,7 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-center font-medium text-lg"
+                  className="bg-primary text-white px-8 py-4 rounded-lg hover:bg-primary/90 transition-colors text-center font-medium text-lg"
                 >
                   Get More Leads!
                 </button>

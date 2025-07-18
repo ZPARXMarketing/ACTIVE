@@ -4,7 +4,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Who Are <span className="text-orange-500">We?</span>
+            Who Are <span className="text-secondary">We?</span>
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
             We're a Huntsville, Alabama-based lead generation agency that helps local businesses by delivering top-tier, 
@@ -16,11 +16,11 @@ export default function About() {
         
         <div className="mt-16">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
-            Our <span className="text-orange-500">Process</span>
+            Our <span className="text-secondary">Process</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 1
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-3">Gather Content</h4>
@@ -31,7 +31,7 @@ export default function About() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 2
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-3">Launch Ads</h4>
@@ -42,7 +42,7 @@ export default function About() {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div className="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
                 3
               </div>
               <h4 className="text-xl font-bold text-gray-900 mb-3">Generate Leads</h4>
