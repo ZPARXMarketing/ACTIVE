@@ -13,31 +13,26 @@ export default function Hero() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Amplify Your Brand's{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                Social Impact
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Fresh perspectives and proven strategies to help your business thrive in the digital landscape. 
-              We're passionate about turning your social media presence into a powerful growth engine.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors text-center font-medium flex items-center justify-center"
-              >
-                <Rocket className="mr-2 h-5 w-5" />
-                Start Your Growth Journey
-              </button>
-              <button
-                onClick={() => scrollToSection("services")}
-                className="border-2 border-primary text-primary px-8 py-4 rounded-full hover:bg-primary hover:text-white transition-colors text-center font-medium flex items-center justify-center"
-              >
-                <Play className="mr-2 h-5 w-5" />
-                Explore Our Services
-              </button>
+            <div className="text-center lg:text-left">
+              <div className="text-lg font-medium text-gray-600 mb-4">Effortless Business Growth</div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                We Generate{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-600">
+                  Quote-Ready
+                </span>{" "}
+                Leads for Your Local Business
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                No Heavy Lifting Required! We handle the ads, qualify the leads, and deliver them straight to you.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button
+                  onClick={() => scrollToSection("contact")}
+                  className="bg-orange-500 text-white px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-center font-medium text-lg"
+                >
+                  Get More Leads!
+                </button>
+              </div>
             </div>
           </div>
           <div className="lg:w-1/2">

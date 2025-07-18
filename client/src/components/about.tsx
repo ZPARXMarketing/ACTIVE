@@ -1,89 +1,57 @@
-import { Lightbulb, BarChart, Clock, Rocket, ArrowRight } from "lucide-react";
-
 export default function About() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const features = [
-    {
-      icon: Lightbulb,
-      title: "Creative Innovation",
-      description: "Fresh ideas that make your brand stand out",
-      color: "text-secondary"
-    },
-    {
-      icon: BarChart,
-      title: "Data-Driven Approach",
-      description: "Every decision backed by analytics and insights",
-      color: "text-primary"
-    },
-    {
-      icon: Clock,
-      title: "Dedicated Support",
-      description: "24/7 commitment to your success",
-      color: "text-green-600"
-    },
-    {
-      icon: Rocket,
-      title: "Growth Focused",
-      description: "Strategies designed for scalable results",
-      color: "text-accent"
-    }
-  ];
-
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Modern team collaboration in creative office space" 
-                className="rounded-2xl shadow-2xl w-full h-auto" 
-              />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-xl">
-                <div className="text-2xl font-bold">100%</div>
-                <div className="text-sm">Dedicated</div>
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Who Are <span className="text-orange-500">We?</span>
+          </h2>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            We're a Huntsville, Alabama-based lead generation agency that helps local businesses by delivering top-tier, 
+            quote-ready leads through strategic advertising on popular social media platforms. Our targeted approach not only 
+            frees you up to concentrate on your work, but also ensures your growth is driven by genuinely interested clients, 
+            making your business growth smooth and efficient.
+          </p>
+        </div>
+        
+        <div className="mt-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-12">
+            Our <span className="text-orange-500">Process</span>
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                1
               </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Gather Content</h4>
+              <p className="text-gray-600">
+                In the initial step, we collect visuals that highlight your craftsmanship. 
+                These form the foundation of our strategy, serving to attract a great 
+                number of potential clients to your business.
+              </p>
             </div>
-          </div>
-          <div className="lg:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Fresh Perspective, Focused Approach
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              At ZparX Marketing, we bring a unique blend of creative innovation and strategic thinking to every project. 
-              Our passion for social media marketing stems from understanding how digital connections can transform businesses.
-            </p>
-            <p className="text-lg text-gray-600 mb-8">
-              We don't just follow trends—we anticipate them. Our fresh perspective combined with data-driven strategies 
-              is designed to help your brand stand out while building authentic relationships with your audience.
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <feature.icon className={`${feature.color} text-xl mt-1`} />
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Launch Ads</h4>
+              <p className="text-gray-600">
+                Next, we launch ads based on the content we've collected. These ads 
+                are strategically designed and placed on popular social media 
+                platforms to capture clients' attention.
+              </p>
             </div>
-            
-            <button 
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary text-white px-8 py-4 rounded-full hover:bg-primary/90 transition-colors inline-flex items-center"
-            >
-              <ArrowRight className="mr-2 h-5 w-5" />
-              Let's Discuss Your Goals
-            </button>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-3">Generate Leads</h4>
+              <p className="text-gray-600">
+                Finally, we collect information from individuals who are genuinely 
+                interested in your services. Prioritizing quote-ready leads and 
+                eliminating tire kickers.
+              </p>
+            </div>
           </div>
         </div>
       </div>
