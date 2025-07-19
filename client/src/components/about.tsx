@@ -43,7 +43,7 @@ export default function About() {
             <div className="relative">
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-                alt="Modern team collaboration in creative office space" 
+                alt="ZparX Marketing team collaborating on social media marketing strategies in modern office" 
                 className="rounded-2xl shadow-2xl w-full h-auto" 
               />
               <div className="absolute -bottom-6 -right-6 bg-primary text-white p-4 rounded-xl">
@@ -54,15 +54,15 @@ export default function About() {
           </div>
           <div className="lg:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Fresh Perspective, Focused Approach
+              Expert Social Media Marketing Team
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              At ZparX Marketing, we bring a unique blend of creative innovation and strategic thinking to every project. 
-              Our passion for social media marketing stems from understanding how digital connections can transform businesses.
+              ZparX Marketing delivers comprehensive social media marketing solutions that transform your digital presence. 
+              Our experienced team specializes in creating targeted campaigns that increase brand awareness, drive engagement, and generate measurable ROI.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              We don't just follow trends—we anticipate them. Our fresh perspective combined with data-driven strategies 
-              is designed to help your brand stand out while building authentic relationships with your audience.
+              From strategic social media planning to content creation and performance analytics, we provide the expertise 
+              your business needs to succeed in today's competitive digital marketplace.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

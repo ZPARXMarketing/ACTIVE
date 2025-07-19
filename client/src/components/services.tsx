@@ -4,22 +4,22 @@ export default function Services() {
   const services = [
     {
       icon: Target,
-      title: "Strategic Planning",
-      description: "Comprehensive social media strategies tailored to your brand's goals, audience, and industry landscape.",
+      title: "Social Media Strategy & Planning",
+      description: "Data-driven social media strategies customized for your business goals, target audience analysis, and competitive landscape research.",
       features: ["Competitor Analysis", "Content Calendars", "Audience Research"],
       gradient: "gradient-primary"
     },
     {
       icon: Palette,
-      title: "Content Creation",
-      description: "Engaging visual content, compelling copy, and multimedia that resonates with your target audience.",
+      title: "Professional Content Creation",
+      description: "High-quality visual content, engaging copywriting, and multimedia production designed to capture attention and drive engagement across all social platforms.",
       features: ["Graphic Design", "Video Production", "Copywriting"],
       gradient: "gradient-secondary"
     },
     {
       icon: TrendingUp,
-      title: "Performance Analytics",
-      description: "Detailed reporting and insights to track growth, engagement, and ROI across all platforms.",
+      title: "Analytics & Performance Tracking",
+      description: "Comprehensive social media analytics, detailed performance reporting, and ROI measurement to optimize campaigns and demonstrate measurable business impact.",
       features: ["Monthly Reports", "ROI Tracking", "Growth Metrics"],
       gradient: "gradient-accent"
     },
@@ -51,11 +51,11 @@ export default function Services() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Social Media Solutions
+            Comprehensive Social Media Marketing Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From strategy to execution, we handle every aspect of your social media presence 
-            with creativity and data-driven insights.
+            From strategic planning to campaign execution, we provide end-to-end social media marketing solutions 
+            that drive engagement, increase brand awareness, and generate measurable business results.
           </p>
         </div>
         

@@ -20,8 +20,8 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Fresh perspectives and proven strategies to help your business thrive in the digital landscape. 
-              We're passionate about turning your social media presence into a powerful growth engine.
+              Professional social media marketing services that drive real business results. We combine creative content, 
+              strategic planning, and data-driven insights to amplify your brand's digital presence and generate qualified leads.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
