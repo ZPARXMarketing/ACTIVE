@@ -65,10 +65,10 @@ export default function LeadCapture() {
             Within 30 Days, or You Don't Pay
           </p>
           
-          <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-2xl">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="bg-white rounded-lg p-12 shadow-2xl">
+            <div className="grid grid-cols-1 gap-8 max-w-md mx-auto">
               <div>
-                <Label htmlFor="fullName" className="text-navy-dark font-medium mb-2 block">
+                <Label htmlFor="fullName" className="text-navy-dark font-medium mb-3 block text-center">
                   Full Name *
                 </Label>
                 <Input
@@ -78,13 +78,13 @@ export default function LeadCapture() {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   required
-                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta"
+                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta h-12 text-center"
                   placeholder="Enter your full name"
                 />
               </div>
               
               <div>
-                <Label htmlFor="website" className="text-navy-dark font-medium mb-2 block">
+                <Label htmlFor="website" className="text-navy-dark font-medium mb-3 block text-center">
                   Website (URL) *
                 </Label>
                 <Input
@@ -94,13 +94,13 @@ export default function LeadCapture() {
                   value={formData.website}
                   onChange={handleInputChange}
                   required
-                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta"
+                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta h-12 text-center"
                   placeholder="https://yourwebsite.com"
                 />
               </div>
               
               <div>
-                <Label htmlFor="email" className="text-navy-dark font-medium mb-2 block">
+                <Label htmlFor="email" className="text-navy-dark font-medium mb-3 block text-center">
                   Email *
                 </Label>
                 <Input
@@ -110,13 +110,13 @@ export default function LeadCapture() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
-                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta"
+                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta h-12 text-center"
                   placeholder="your@email.com"
                 />
               </div>
               
               <div>
-                <Label htmlFor="phone" className="text-navy-dark font-medium mb-2 block">
+                <Label htmlFor="phone" className="text-navy-dark font-medium mb-3 block text-center">
                   Phone *
                 </Label>
                 <Input
@@ -126,17 +126,17 @@ export default function LeadCapture() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta"
+                  className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta h-12 text-center"
                   placeholder="(555) 123-4567"
                 />
               </div>
             </div>
             
-            <div className="mt-8">
+            <div className="mt-10 max-w-md mx-auto">
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-purple-cta hover:bg-purple-cta/90 text-white font-bold py-4 px-8 text-lg"
+                className="w-full bg-purple-cta hover:bg-purple-cta/90 text-white font-bold py-4 px-8 text-lg h-12"
               >
                 {isSubmitting ? "Submitting..." : "Get More Leads!"}
               </Button>
