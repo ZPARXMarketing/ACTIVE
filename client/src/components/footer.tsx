@@ -1,15 +1,8 @@
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <footer className="bg-navy-dark text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-purple-cta rounded flex items-center justify-center text-white font-bold text-lg">
@@ -46,24 +39,13 @@ export default function Footer() {
           </div>
           
           <div className="col-span-1">
-            <h4 className="text-base sm:text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-              <li><span className="hover:text-white transition-colors">Strategic Planning</span></li>
-              <li><span className="hover:text-white transition-colors">Content Creation</span></li>
-              <li><span className="hover:text-white transition-colors">Analytics</span></li>
-              <li><span className="hover:text-white transition-colors">Community Management</span></li>
-              <li><span className="hover:text-white transition-colors">Paid Advertising</span></li>
-            </ul>
-          </div>
-          
-          <div className="col-span-1">
             <h4 className="text-base sm:text-lg font-semibold mb-4">Company</h4>
             <ul className="space-y-2 text-gray-400 text-sm sm:text-base">
-              <li><button onClick={() => scrollToSection("about")} className="hover:text-white transition-colors text-left">About Us</button></li>
-              <li><button onClick={() => scrollToSection("process")} className="hover:text-white transition-colors text-left">Our Process</button></li>
-              <li><button onClick={() => scrollToSection("lead-capture")} className="hover:text-white transition-colors text-left">Contact</button></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><span>About Us</span></li>
+              <li><span>Our Process</span></li>
+              <li><span>Contact</span></li>
+              <li><span>Privacy Policy</span></li>
+              <li><span>Terms of Service</span></li>
             </ul>
           </div>
         </div>

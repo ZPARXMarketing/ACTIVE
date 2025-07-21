@@ -9,18 +9,18 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="pt-20 pb-16 bg-navy-dark">
+    <section id="home" className="pt-20 pb-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-dark mb-6 leading-tight">
               We Generate{" "}
               <span className="text-orange-highlight font-bold">
                 Quote-Ready
               </span>{" "}
               Leads for Your Local Business
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               No Heavy Lifting Required! We handle the ads, qualify the leads, and deliver them straight to you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
