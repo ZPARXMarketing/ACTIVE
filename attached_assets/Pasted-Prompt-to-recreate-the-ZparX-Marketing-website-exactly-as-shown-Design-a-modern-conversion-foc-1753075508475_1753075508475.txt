@@ -1,0 +1,79 @@
+Prompt to recreate the ZparX Marketing website exactly as shown:
+
+⸻
+
+Design a modern, conversion-focused landing page for a lead generation agency called ZparX Marketing, targeting local service-based businesses. The color scheme is dark navy (#0D1321) with white and orange (#FFA726) highlights and purple (#7C4DFF) for CTA buttons. Layout sections as follows:
+
+⸻
+
+Header (Sticky)
+	•	Logo: Top left, “ZparX Marketing” with a bold modern X-mark logo.
+	•	Nav Links (Top Right): Home, About, Get Started
+	•	Button (Top Right): “Get Started” — solid purple button (#7C4DFF), rounded corners.
+
+⸻
+
+Hero Section
+	•	Headline: “We Generate Quote-Ready Leads for Your Local Business”
+	•	“Quote-Ready” in bold orange (#FFA726)
+	•	Subheadline: “No Heavy Lifting Required! We handle the ads, qualify the leads, and deliver them straight to you.”
+	•	CTA Button: “Get More Leads!” in bold white text on purple button.
+	•	Graphic: Floating browser window showing “Social Media Strategy” with icons/text:
+	•	24/7 Support
+	•	Creative Content
+	•	Results Focused
+	•	Small upward arrow icon labeled “Strategy Planning”
+
+⸻
+
+Section: “Who Are We?”
+	•	Headline: “Who Are We?” — “We” in orange (#FFA726)
+	•	Text:
+Huntsville, Alabama-based lead generation agency helping local businesses get quote-ready leads through strategic ads on social media.
+Emphasis on removing effort for the client and delivering interested prospects.
+
+⸻
+
+Section: “Our Process”
+	•	3-Step Process with Icons
+	•	Step 1: Gather Content
+Collect visuals of craftsmanship for ad base.
+	•	Step 2: Launch Ads
+Run strategic ads on social platforms.
+	•	Step 3: Generate Leads
+Collect info from qualified prospects, filtering out time-wasters.
+	•	Each step uses a circle number (1, 2, 3) with matching brand colors (purple, orange, red).
+
+⸻
+
+Lead Capture Form Section
+	•	Headline: “Get 10 New Quote-Ready Leads”
+	•	Subheadline: “Within 30 Days, or You Don’t Pay” in orange.
+	•	Form Fields: Full Name, Website (URL), Email, Phone (all required)
+	•	CTA Button: “Get More Leads!” in purple, centered below form
+
+⸻
+
+Footer
+	•	Left Column:
+	•	Logo + Name “ZparX Marketing”
+	•	Tagline: “Transforming businesses through innovative social media strategies and creative excellence. Your success is our passion.”
+	•	Social Icons: Facebook, X (Twitter), Instagram, LinkedIn
+	•	Middle Column (Services):
+	•	Strategic Planning
+	•	Content Creation
+	•	Analytics
+	•	Community Management
+	•	Paid Advertising
+	•	Right Column (Company):
+	•	About Us
+	•	Our Process
+	•	Contact
+	•	Privacy Policy
+	•	Terms of Service
+	•	Bottom:
+© 2024 ZparX Marketing. All rights reserved. Designed for digital excellence.
+
+⸻
+
+Ensure all text is legible, clean sans-serif font, mobile-responsive, and optimized for lead conversion.
