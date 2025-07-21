@@ -17,9 +17,11 @@ export default function Navigation() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 min-w-0 flex-shrink">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-cta rounded flex items-center justify-center text-white font-bold text-lg">
-              X
-            </div>
+            <img 
+              src="/assets/Untitled design.zip - 2_1753076519840.png" 
+              alt="ZparX Marketing Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
+            />
             <span className="text-lg sm:text-xl font-bold text-navy-dark truncate">ZparX Marketing</span>
           </div>
           
