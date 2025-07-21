@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoImage from "@assets/Untitled design.zip - 2_1753076519840.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 min-w-0 flex-shrink">
             <img 
-              src="/assets/Untitled design.zip - 2_1753076519840.png" 
+              src={logoImage} 
               alt="ZparX Marketing Logo" 
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
             />
