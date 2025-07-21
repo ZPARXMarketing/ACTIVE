@@ -99,15 +99,23 @@ export default function Contact() {
           <div className="lg:w-2/3">
             <div className="bg-white rounded-2xl shadow-lg p-8">
               {isSubmitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                      <Send className="h-8 w-8 text-green-600" />
+                <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-8 text-center shadow-lg">
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center animate-pulse">
+                      <Send className="h-10 w-10 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-green-800 mb-2">Message Sent Successfully!</h3>
-                  <p className="text-green-700">
-                    Thank you for reaching out. We'll get back to you within 24 hours with a personalized response.
+                  <h3 className="text-2xl font-bold text-green-800 mb-4">Thank You for Reaching Out!</h3>
+                  <p className="text-lg text-green-700 mb-4">
+                    Your message has been successfully sent to our team.
+                  </p>
+                  <div className="bg-white/60 rounded-xl p-4 mb-4">
+                    <p className="text-green-600 font-medium">
+                      ✨ We will get back to you soon with personalized solutions for your business needs.
+                    </p>
+                  </div>
+                  <p className="text-sm text-green-600">
+                    Expected response time: Within 24 hours
                   </p>
                 </div>
               ) : (
