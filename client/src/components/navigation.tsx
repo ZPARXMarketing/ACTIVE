@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,31 +17,23 @@ export default function Navigation() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 min-w-0 flex-shrink">
-            <img 
-              src="/assets/zparx-logo-clean.png" 
-              alt="ZparX Marketing Logo" 
-              className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
-            />
-            <span className="text-lg sm:text-xl font-bold text-gray-900 truncate">ZparX Marketing</span>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-purple-cta rounded flex items-center justify-center text-white font-bold text-lg">
+              X
+            </div>
+            <span className="text-lg sm:text-xl font-bold text-navy-dark truncate">ZparX Marketing</span>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 xl:space-x-8">
-            <button onClick={() => scrollToSection("home")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
+            <button onClick={() => scrollToSection("home")} className="text-navy-dark hover:text-purple-cta transition-colors text-sm xl:text-base">
               Home
             </button>
-            <button onClick={() => scrollToSection("services")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
-              Services
-            </button>
-            <button onClick={() => scrollToSection("about")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
+            <button onClick={() => scrollToSection("about")} className="text-navy-dark hover:text-purple-cta transition-colors text-sm xl:text-base">
               About
             </button>
-            <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-sm xl:text-base">
-              Process
-            </button>
             <button 
-              onClick={() => scrollToSection("contact")} 
-              className="bg-primary text-white px-4 xl:px-6 py-2 rounded-full hover:bg-primary/90 transition-colors text-sm xl:text-base whitespace-nowrap"
+              onClick={() => scrollToSection("lead-capture")} 
+              className="bg-purple-cta text-white px-4 xl:px-6 py-2 rounded hover:bg-purple-cta/90 transition-colors text-sm xl:text-base whitespace-nowrap"
             >
               Get Started
             </button>
@@ -49,7 +41,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-gray-700 flex-shrink-0 p-1"
+            className="md:hidden text-navy-dark flex-shrink-0 p-1"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -60,22 +52,16 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
             <div className="flex flex-col space-y-3 mt-4">
-              <button onClick={() => scrollToSection("home")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
+              <button onClick={() => scrollToSection("home")} className="text-navy-dark hover:text-purple-cta transition-colors text-left py-2">
                 Home
               </button>
-              <button onClick={() => scrollToSection("services")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
-                Services
-              </button>
-              <button onClick={() => scrollToSection("about")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
+              <button onClick={() => scrollToSection("about")} className="text-navy-dark hover:text-purple-cta transition-colors text-left py-2">
                 About
-              </button>
-              <button onClick={() => scrollToSection("process")} className="text-gray-700 hover:text-primary transition-colors text-left py-2">
-                Process
               </button>
               <div className="pt-2">
                 <button 
-                  onClick={() => scrollToSection("contact")} 
-                  className="w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors text-center"
+                  onClick={() => scrollToSection("lead-capture")} 
+                  className="w-full bg-purple-cta text-white px-6 py-3 rounded hover:bg-purple-cta/90 transition-colors text-center"
                 >
                   Get Started
                 </button>
