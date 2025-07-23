@@ -103,7 +103,7 @@ export default function LeadCapture() {
                   onChange={handleInputChange}
                   required
                   className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta h-12 text-center"
-                  placeholder="jeremymsparks.com"
+                  placeholder="yourwebsite.com"
                 />
               </div>
               
