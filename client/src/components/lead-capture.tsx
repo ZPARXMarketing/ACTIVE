@@ -27,9 +27,17 @@ export default function LeadCapture() {
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/lead-capture', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
       
       toast({
         title: "Success!",
@@ -85,17 +93,17 @@ export default function LeadCapture() {
               
               <div>
                 <Label htmlFor="website" className="text-navy-dark font-medium mb-3 block text-center">
-                  Website (URL) *
+                  Website *
                 </Label>
                 <Input
                   id="website"
                   name="website"
-                  type="url"
+                  type="text"
                   value={formData.website}
                   onChange={handleInputChange}
                   required
                   className="border-gray-300 focus:border-purple-cta focus:ring-purple-cta h-12 text-center"
-                  placeholder="https://yourwebsite.com"
+                  placeholder="jeremymsparks.com"
                 />
               </div>
               

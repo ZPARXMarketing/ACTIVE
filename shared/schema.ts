@@ -20,6 +20,15 @@ export const contactSubmissions = pgTable("contact_submissions", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const leadCaptureSubmissions = pgTable("lead_capture_submissions", {
+  id: serial("id").primaryKey(),
+  fullName: text("full_name").notNull(),
+  website: text("website").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
 export const consultationBookings = pgTable("consultation_bookings", {
   id: serial("id").primaryKey(),
   firstName: text("first_name").notNull(),
@@ -43,6 +52,11 @@ export const insertContactSchema = createInsertSchema(contactSubmissions).omit({
   createdAt: true,
 });
 
+export const insertLeadCaptureSchema = createInsertSchema(leadCaptureSubmissions).omit({
+  id: true,
+  createdAt: true,
+});
+
 export const insertConsultationSchema = createInsertSchema(consultationBookings).omit({
   id: true,
   createdAt: true,
@@ -52,5 +66,7 @@ export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContact = z.infer<typeof insertContactSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+export type InsertLeadCapture = z.infer<typeof insertLeadCaptureSchema>;
+export type LeadCaptureSubmission = typeof leadCaptureSubmissions.$inferSelect;
 export type InsertConsultation = z.infer<typeof insertConsultationSchema>;
 export type ConsultationBooking = typeof consultationBookings.$inferSelect;

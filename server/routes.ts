@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertContactSchema, insertConsultationSchema } from "@shared/schema";
+import { insertContactSchema, insertLeadCaptureSchema, insertConsultationSchema } from "@shared/schema";
 import { z } from "zod";
 import nodemailer from "nodemailer";
 
@@ -12,6 +12,55 @@ export async function registerRoutes(app: Express): Promise<Server> {
     auth: {
       user: process.env.EMAIL_USER || 'your-email@gmail.com',
       pass: process.env.EMAIL_PASSWORD || 'your-app-password'
+    }
+  });
+
+  // Lead capture form submission endpoint
+  app.post("/api/lead-capture", async (req, res) => {
+    try {
+      // Auto-format website URL
+      let website = req.body.website;
+      if (website && !website.startsWith('http://') && !website.startsWith('https://')) {
+        website = `https://${website}`;
+      }
+
+      // Validate request body with formatted website
+      const validatedData = insertLeadCaptureSchema.parse({
+        ...req.body,
+        website
+      });
+      
+      // Store lead capture submission
+      const leadCapture = await storage.createLeadCaptureSubmission(validatedData);
+      
+      // Send email notification
+      const mailOptions = {
+        from: process.env.EMAIL_USER || 'your-email@gmail.com',
+        to: 'zparxmarketing@gmail.com',
+        subject: `🎯 New Lead Capture - ${validatedData.fullName}`,
+        html: `
+          <h2>New Lead Capture Form Submission</h2>
+          <p><strong>Name:</strong> ${validatedData.fullName}</p>
+          <p><strong>Website:</strong> <a href="${validatedData.website}" target="_blank">${validatedData.website}</a></p>
+          <p><strong>Email:</strong> <a href="mailto:${validatedData.email}">${validatedData.email}</a></p>
+          <p><strong>Phone:</strong> <a href="tel:${validatedData.phone}">${validatedData.phone}</a></p>
+          <hr>
+          <p><strong>Service:</strong> 10 Quote-Ready Leads in 30 Days</p>
+          <p><strong>Guarantee:</strong> Results within 30 days or money back</p>
+          <p><small>Submitted on: ${new Date().toLocaleString()}</small></p>
+        `
+      };
+
+      await transporter.sendMail(mailOptions);
+      
+      res.json({ message: "Lead capture submitted successfully", id: leadCapture.id });
+    } catch (error) {
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Validation error", errors: error.errors });
+      } else {
+        console.error("Error processing lead capture:", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
     }
   });
 
@@ -27,7 +76,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email notification
       const mailOptions = {
         from: process.env.EMAIL_USER || 'your-email@gmail.com',
-        to: 'Zparxmarketing@gmail.com',
+        to: 'zparxmarketing@gmail.com',
         subject: `New Contact Form Submission - ${validatedData.firstName} ${validatedData.lastName}`,
         html: `
           <h2>New Contact Form Submission</h2>
@@ -75,7 +124,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email notification to track which offers are getting engagement
       const mailOptions = {
         from: process.env.EMAIL_USER || 'your-email@gmail.com',
-        to: 'Zparxmarketing@gmail.com',
+        to: 'zparxmarketing@gmail.com',
         subject: `🎯 Offer Page Activity - ${offerType}`,
         html: `
           <h2>New Offer Page Activity</h2>
@@ -110,7 +159,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Send email notification for consultation booking
       const mailOptions = {
         from: process.env.EMAIL_USER || 'your-email@gmail.com',
-        to: 'Zparxmarketing@gmail.com',
+        to: 'zparxmarketing@gmail.com',
         subject: `New Consultation Booking - ${validatedData.firstName} ${validatedData.lastName}`,
         html: `
           <h2>New Consultation Booking for Lead Generation Service</h2>
