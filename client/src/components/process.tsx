@@ -3,19 +3,19 @@ export default function Process() {
     {
       number: 1,
       title: "Gather Content",
-      description: "Collect visuals of craftsmanship for ad base.",
+      description: "In the initial step, we collect visuals that highlight your craftsmanship. These form the foundation of our strategy, serving to attract a great number of potential clients to your business.",
       color: "bg-purple-cta"
     },
     {
       number: 2,
       title: "Launch Ads",
-      description: "Run strategic ads on social platforms.",
+      description: "Next, we launch ads based on the content we've collected. These ads are strategically designed and placed on popular social media platforms to capture clients' attention.",
       color: "bg-orange-highlight"
     },
     {
       number: 3,
       title: "Generate Leads",
-      description: "Collect info from qualified prospects, filtering out time-wasters.",
+      description: "Finally, we collect information from individuals who are genuinely interested in your services. Prioritizing quote-ready leads and eliminating tire kickers.",
       color: "bg-red-500"
     }
   ];
