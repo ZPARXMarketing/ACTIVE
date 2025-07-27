@@ -12,7 +12,7 @@ const paymentPlans = [
   {
     id: "starter",
     name: "Social Media Starter",
-    price: "497",
+    price: "999",
     description: "Perfect for small businesses getting started with social media",
     features: [
       "3 Posts per week",
@@ -24,7 +24,7 @@ const paymentPlans = [
   {
     id: "growth",
     name: "Growth Package",
-    price: "797",
+    price: "1499",
     description: "Ideal for growing businesses wanting more engagement",
     features: [
       "5 Posts per week",
@@ -37,7 +37,7 @@ const paymentPlans = [
   {
     id: "premium",
     name: "Premium Package",
-    price: "1197",
+    price: "2499",
     description: "Complete social media management for serious growth",
     features: [
       "Daily posts",
@@ -51,7 +51,7 @@ const paymentPlans = [
   {
     id: "lead-gen",
     name: "Lead Generation Service",
-    price: "997",
+    price: "2000",
     description: "Get 10 quote-ready leads in 30 days or money back",
     features: [
       "Custom lead generation strategy",
