@@ -9,6 +9,8 @@ import Presentation from "@/pages/presentation";
 import Funnel from "@/pages/funnel";
 import SocialMediaOffer from "@/pages/social-media-offer";
 import Payment from "@/pages/payment";
+import SocialMediaPayment from "@/pages/social-media-payment";
+import LeadGenerationPayment from "@/pages/lead-generation-payment";
 
 function Router() {
   return (
@@ -18,6 +20,8 @@ function Router() {
       <Route path="/lead-gen-offer" component={Funnel} />
       <Route path="/social-media" component={SocialMediaOffer} />
       <Route path="/payment" component={Payment} />
+      <Route path="/social-media-payment" component={SocialMediaPayment} />
+      <Route path="/lead-generation-payment" component={LeadGenerationPayment} />
       <Route component={NotFound} />
     </Switch>
   );

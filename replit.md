@@ -6,6 +6,8 @@ This is a full-stack web application for ZparX Marketing, a social media marketi
 
 ## Recent Changes
 
+- **January 27, 2025**: Split payment portals into two separate pages: `/social-media-payment` for three social media tiers and `/lead-generation-payment` for lead generation service only
+- **January 27, 2025**: Updated service pricing: Starter ($999), Growth ($1,499), Premium ($2,499), Lead Generation ($2,000)
 - **January 27, 2025**: Created PayPal payment portal at `/payment` with service package selection and secure checkout
 - **January 27, 2025**: Integrated PayPal SDK with sandbox credentials for payment processing
 - **January 27, 2025**: Fixed website field validation in lead capture form to accept simple domain format
