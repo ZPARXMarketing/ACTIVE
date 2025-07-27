@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertContactSchema, insertLeadCaptureSchema, insertConsultationSchema } from "@shared/schema";
 import { z } from "zod";
 import nodemailer from "nodemailer";
+import { createPaypalOrder, capturePaypalOrder, loadPaypalDefault } from "./paypal";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Create email transporter
@@ -199,6 +200,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Error fetching consultation bookings:", error);
       res.status(500).json({ message: "Internal server error" });
     }
+  });
+
+  // PayPal routes
+  app.get("/paypal/setup", async (req, res) => {
+    await loadPaypalDefault(req, res);
+  });
+
+  app.post("/paypal/order", async (req, res) => {
+    // Request body should contain: { intent, amount, currency }
+    await createPaypalOrder(req, res);
+  });
+
+  app.post("/paypal/order/:orderID/capture", async (req, res) => {
+    await capturePaypalOrder(req, res);
   });
 
   const httpServer = createServer(app);

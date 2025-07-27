@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import Presentation from "@/pages/presentation";
 import Funnel from "@/pages/funnel";
 import SocialMediaOffer from "@/pages/social-media-offer";
+import Payment from "@/pages/payment";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/presentation_A" component={Presentation} />
       <Route path="/lead-gen-offer" component={Funnel} />
       <Route path="/social-media" component={SocialMediaOffer} />
+      <Route path="/payment" component={Payment} />
       <Route component={NotFound} />
     </Switch>
   );

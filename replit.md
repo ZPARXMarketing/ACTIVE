@@ -6,6 +6,10 @@ This is a full-stack web application for ZparX Marketing, a social media marketi
 
 ## Recent Changes
 
+- **January 27, 2025**: Created PayPal payment portal at `/payment` with service package selection and secure checkout
+- **January 27, 2025**: Integrated PayPal SDK with sandbox credentials for payment processing
+- **January 27, 2025**: Fixed website field validation in lead capture form to accept simple domain format
+- **January 27, 2025**: Added Facebook pixel tracking for visitor behavior and ad optimization
 - **July 15, 2025**: Implemented email tracking for offer page interactions (page visits, plan selections, Calendly opens)
 - **July 15, 2025**: Added ZparX logo and clickable navigation back to main site on both offer pages
 - **July 15, 2025**: Created social media management offer page at `/social-media` with three pricing tiers (Starter $497, Growth $797, Premium $1,197)
