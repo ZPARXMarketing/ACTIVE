@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { Mail, Clock, Handshake, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,7 +10,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
 
 const contactFormSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -26,6 +25,7 @@ type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isPending, setIsPending] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<ContactFormData>({
@@ -41,34 +41,39 @@ export default function Contact() {
     },
   });
 
-  const contactMutation = useMutation({
-    mutationFn: async (data: ContactFormData) => {
-      return await apiRequest("POST", "/api/contact", data);
-    },
-    onSuccess: () => {
+  const onSubmit = async (data: ContactFormData) => {
+    setIsPending(true);
+    try {
+      await emailjs.send(
+        "service_ytn4t1g",
+        "template_vrxaxnh",
+        {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone || "Not provided",
+          company: data.company || "Not provided",
+          service: data.service || "Not specified",
+          message: data.message,
+        },
+        "vstTjxq9iepuAdZ6O"
+      );
       setIsSubmitted(true);
       form.reset();
       toast({
         title: "Message sent successfully!",
         description: "We'll get back to you within 24 hours.",
       });
-      
-      // Reset success state after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    },
-    onError: (error) => {
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
       toast({
         title: "Error sending message",
-        description: error.message || "Please try again later.",
+        description: "Please try again later.",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = (data: ContactFormData) => {
-    contactMutation.mutate(data);
+    } finally {
+      setIsPending(false);
+    }
   };
 
   const serviceOptions = [
@@ -239,9 +244,9 @@ export default function Contact() {
                     <Button 
                       type="submit" 
                       className="w-full py-6 text-lg"
-                      disabled={contactMutation.isPending}
+                      disabled={isPending}
                     >
-                      {contactMutation.isPending ? (
+                      {isPending ? (
                         <>
                           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
                           Sending...
@@ -271,7 +276,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600">Zparxmarketing@gmail.com</p>
+                    <p className="text-gray-600">jeremy@zparx.com</p>
                   </div>
                 </div>
                 
