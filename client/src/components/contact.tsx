@@ -265,7 +265,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
-                    <p className="text-gray-600">Zparxmarketing@gmail.com</p>
+                    <p className="text-gray-600">Jeremy@Zparx.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
